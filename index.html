@@ -76,26 +76,23 @@
             transition: 0.2s ease;
         }
 
-        .social-icon {
+        .social-button img {
             width: 17px;
             height: 17px;
-            background-color: #111;
-            transition: background-color 0.2s ease;
+            display: block;
         }
 
-        .linkedin-icon {
-            -webkit-mask: url("icons/__linkedin.svg") center / contain no-repeat;
-            mask: url("icons/__linkedin.svg") center / contain no-repeat;
+        .social-button .icon-blue {
+            display: none;
         }
 
-        .github-icon {
-            -webkit-mask: url("icons/__github.svg") center / contain no-repeat;
-            mask: url("icons/__github.svg") center / contain no-repeat;
+        .social-button:hover .icon-black {
+            display: none;
         }
 
-        .social-button:hover .social-icon {
-            background-color: #3b2ee8;
-        }      
+        .social-button:hover .icon-blue {
+            display: block;
+        }     
 
         .social-button:hover {
             color: #3b2ee8;
@@ -177,14 +174,26 @@
                 href="https://www.linkedin.com/in/tbtaaa/"
                 target="_blank"
                 rel="noopener noreferrer">
-                    <span class="social-icon linkedin-icon"></span>
+                    <img src="icons/__linkedin.svg"
+                        class="icon-black"
+                        alt="LinkedIn">
+
+                    <img src="icons/__linkedin_azul.svg"
+                        class="icon-blue"
+                        alt="">
                 </a>
 
                 <a class="social-button"
                 href="https://github.com/Tbtaaa"
                 target="_blank"
                 rel="noopener noreferrer">
-                    <span class="social-icon github-icon"></span>
+                    <img src="icons/__github.svg"
+                        class="icon-black"
+                        alt="GitHub">
+
+                    <img src="icons/__github_azul.svg"
+                        class="icon-blue"
+                        alt="">
                 </a>
 
                 <span class="divider"></span>
