@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tabata Paredes</title>
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            color: #111;
+            background: white;
+        }
+
+        .home {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 70px;
+
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px;
+        }
+
+        .intro h1 {
+            margin: 0;
+            font-size: 46px;
+            line-height: 1.2;
+            font-weight: 400;
+            letter-spacing: -1.5px;
+        }
+
+        .name {
+            color: #3b2ee8;
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 34px;
+            font-size: 14px;
+        }
+
+        .contact a {
+            color: #111;
+            text-decoration: none;
+        }
+
+        .social-button {
+            width: 29px;
+            height: 29px;
+            border: 2px solid #aaa;
+            border-radius: 5px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+
+        .social-icon {
+            width: 17px;
+            height: 17px;
+            background-color: #111;
+            transition: background-color 0.2s ease;
+        }
+
+        .linkedin-icon {
+            -webkit-mask: url("icons/__linkedin.svg") center / contain no-repeat;
+            mask: url("icons/__linkedin.svg") center / contain no-repeat;
+        }
+
+        .github-icon {
+            -webkit-mask: url("icons/__github.svg") center / contain no-repeat;
+            mask: url("icons/__github.svg") center / contain no-repeat;
+        }
+
+        .social-button:hover .social-icon {
+            background-color: #3b2ee8;
+        }      
+
+        .social-button:hover {
+            color: #3b2ee8;
+            border-color: #3b2ee8;
+        }
+
+        .divider {
+            height: 27px;
+            width: 1px;
+            background: #aaa;
+            margin: 0 2px;
+        }
+
+        .about {
+            max-width: 440px;
+        }
+
+        .about p {
+            margin: 0 0 22px;
+            font-size: 16px;
+            line-height: 1.35;
+        }
+
+        .about strong {
+            color: #3b2ee8;
+            font-weight: 700;
+        }
+
+        .projects-button {
+            display: inline-block;
+            padding: 5px 10px;
+
+            background: #3b2ee8;
+            color: white;
+
+            border-radius: 5px;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: transform 0.2s ease;
+        }
+
+        .projects-button:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 800px) {
+            .home {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 50px 30px;
+            }
+
+            .intro h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main class="home">
+
+        <!-- LEFT -->
+        <section class="intro">
+
+            <h1>
+                Hello! I’m<br>
+                <span class="name">Tabata Paredes</span>
+            </h1>
+
+            <div class="contact">
+
+                <a class="social-button"
+                href="https://www.linkedin.com/in/tbtaaa/"
+                target="_blank"
+                rel="noopener noreferrer">
+                    <span class="social-icon linkedin-icon"></span>
+                </a>
+
+                <a class="social-button"
+                href="https://github.com/Tbtaaa"
+                target="_blank"
+                rel="noopener noreferrer">
+                    <span class="social-icon github-icon"></span>
+                </a>
+
+                <span class="divider"></span>
+
+                <a href="mailto:jtabataparedes@gmail.com">
+                    jtabataparedes@gmail.com
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT -->
+        <section class="about">
+
+            <p>
+                I’m an <strong>Urban Data Scientist</strong> with a background in
+                architecture and urban planning. I’m interested in how data can
+                help us understand cities, from the way people move and access
+                opportunities to how urban systems grow and change. My work
+                brings together spatial analysis, modelling, visualisation and
+                urban planning to explore these questions.
+            </p>
+
+            <p>
+                Have a look at my projects and don’t hesitate to get in touch!
+            </p>
+
+            <a href="projects.html" class="projects-button">
+                PROJECTS
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

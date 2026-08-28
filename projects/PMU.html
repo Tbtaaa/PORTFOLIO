@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lima–Callao Urban Mobility Plan — Tabata Paredes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            color: #111;
+            background: white;
+        }
+
+
+        /* ---------------------------------
+           TOP NAV
+        --------------------------------- */
+
+        .top-nav {
+            position: fixed;
+            top: 17px;
+            left: 14px;
+            z-index: 100;
+
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            font-size: 13px;
+        }
+
+        .top-nav a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .top-nav a:hover {
+            color: #3b2ee8;
+        }
+
+        .top-nav .projects-link {
+            font-weight: 700;
+        }
+
+        .nav-line {
+            width: 1px;
+            height: 28px;
+            background: #aaa;
+        }
+
+
+        /* ---------------------------------
+           PAGE LAYOUT
+        --------------------------------- */
+
+        .project-page {
+            display: grid;
+            grid-template-columns: 430px minmax(0, 1fr);
+
+            max-width: 1400px;
+            margin: 0 auto;
+
+            padding: 95px 42px 100px 76px;
+        }
+
+
+        /* ---------------------------------
+           LEFT SIDE — STAYS FIXED
+        --------------------------------- */
+
+        .project-info {
+            position: sticky;
+            top: 135px;
+            align-self: start;
+
+            padding-right: 45px;
+        }
+
+        .project-info h1 {
+            margin: 0 0 15px;
+
+            color: #3b2ee8;
+
+            font-size: 34px;
+            line-height: 1.12;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            padding: 3px 8px;
+
+            border: 1.5px solid #bbb;
+            border-radius: 5px;
+
+            color: #888;
+
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+        }
+
+        .description {
+            max-width: 390px;
+
+            margin: 0;
+
+            font-size: 12.5px;
+            line-height: 1.5;
+
+            color: #333;
+        }
+
+        .description strong {
+            color: #3b2ee8;
+            font-weight: 700;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 22px;
+            height: 22px;
+            margin-top: 22px;
+
+            border: 2px solid #bbb;
+            border-radius: 5px;
+
+            text-decoration: none;
+
+            transition: border-color 0.2s ease;
+        }
+
+        .back-icon {
+            width: 12px;
+            height: 12px;
+
+            background-color: #aaa;
+
+            -webkit-mask: url("../icons/__arrow.svg") center / contain no-repeat;
+            mask: url("../icons/__arrow.svg") center / contain no-repeat;
+
+            transition: background-color 0.2s ease;
+        }
+
+        .back-button:hover {
+            border-color: #3b2ee8;
+        }
+
+        .back-button:hover .back-icon {
+            background-color: #3b2ee8;
+        }
+
+        /* ---------------------------------
+           RIGHT SIDE — SCROLLING IMAGES
+        --------------------------------- */
+
+        .gallery {
+            min-width: 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            margin-bottom: 22px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+
+        /* TEMPORARY MAGENTA PLACEHOLDERS */
+
+        .placeholder {
+            height: 300px;
+            background: #ed008c;
+        }
+
+
+        /* ---------------------------------
+           MOBILE
+        --------------------------------- */
+
+        @media (max-width: 850px) {
+
+            .project-page {
+                display: block;
+                padding: 100px 25px 60px;
+            }
+
+            .project-info {
+                position: relative;
+                top: auto;
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+
+            .description {
+                max-width: 600px;
+            }
+
+            .placeholder {
+                height: 55vw;
+                min-height: 220px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <nav class="top-nav">
+
+        <a href="../index.html">
+            TABATA PAREDES
+        </a>
+
+        <span class="nav-line"></span>
+
+        <a href="../projects.html" class="projects-link">
+            PROJECTS
+        </a>
+
+    </nav>
+
+
+    <main class="project-page">
+
+
+        <!-- LEFT -->
+
+        <aside class="project-info">
+
+            <h1>
+                Lima–Callao<br>
+                Urban Mobility Plan
+            </h1>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    Urban Planning
+                </span>
+
+                <span class="tag">
+                    Transport
+                </span>
+
+                <span class="tag">
+                    Data Communication
+                </span>
+
+            </div>
+
+
+            <p class="description">
+
+                The Lima–Callao Urban Mobility Plan defines the future development
+                of the metropolitan transport system, bringing together proposals
+                for metro, BRT, cable car and other mobility infrastructure.
+
+                <br><br>
+
+                I worked as part of the planning team, organising and analysing
+                <strong>geospatial data</strong> and producing technical maps,
+                3D models and visualisations to explore proposals and communicate
+                them clearly within a <strong>multidisciplinary team</strong> and
+                to <strong>non-technical audiences</strong>.
+
+                <br><br>
+
+                My work also included the development of urban and transport
+                planning methodologies and spatial materials used throughout
+                the planning process.
+
+            </p>
+
+
+            <a href="../projects.html" class="back-button" aria-label="Back to projects">
+                <span class="back-icon"></span>
+            </a>
+
+        </aside>
+
+
+
+        <!-- RIGHT -->
+
+        <section class="gallery">
+
+
+            <div class="gallery-item placeholder">
+            </div>
+
+
+            <div class="gallery-item placeholder">
+            </div>
+
+
+            <div class="gallery-item placeholder">
+            </div>
+
+
+            <div class="gallery-item placeholder">
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>

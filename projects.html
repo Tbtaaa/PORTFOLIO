@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects — Tabata Paredes</title>
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            color: #111;
+            background: white;
+        }
+
+
+        /* ---------------------------------
+           TOP NAVIGATION
+        --------------------------------- */
+
+        .top-nav {
+            position: fixed;
+            top: 17px;
+            left: 14px;
+            z-index: 100;
+
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            font-size: 13px;
+        }
+
+        .top-nav a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .top-nav a:hover {
+            color: #3b2ee8;
+        }
+
+        .top-nav .projects-link {
+            font-weight: 700;
+        }
+
+        .nav-line {
+            width: 1px;
+            height: 28px;
+            background: #aaa;
+        }
+
+
+        /* ---------------------------------
+           MAIN LAYOUT
+        --------------------------------- */
+
+        .projects-page {
+            display: grid;
+            grid-template-columns: 245px 1fr;
+
+            max-width: 1400px;
+            margin: 0 auto;
+
+            padding: 55px 42px 80px 76px;
+        }
+
+
+        /* ---------------------------------
+           LEFT SIDE
+        --------------------------------- */
+
+        .sidebar {
+            position: sticky;
+            top: 180px;
+            align-self: start;
+        }
+
+        .sidebar h1 {
+            margin: 0 0 28px;
+
+            font-size: 44px;
+            line-height: 1;
+            font-weight: 400;
+            letter-spacing: -1.5px;
+        }
+
+        .filter {
+            display: block;
+
+            margin: 5px 0;
+
+            color: #333;
+            text-decoration: none;
+
+            font-size: 16px;
+        }
+
+        .filter:hover {
+            color: #3b2ee8;
+        }
+
+        .filter.active {
+            color: #3b2ee8;
+            font-weight: 700;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 22px;
+            height: 22px;
+
+            margin-top: 18px;
+
+            border: 2px solid #bbb;
+            border-radius: 5px;
+
+            color: #aaa;
+            text-decoration: none;
+
+            font-size: 16px;
+        }
+
+        .back-icon {
+            width: 12px;
+            height: 12px;
+
+            background-color: #aaa;
+
+            -webkit-mask: url("icons/__arrow.svg") center / contain no-repeat;
+            mask: url("icons/__arrow.svg") center / contain no-repeat;
+
+            transition: background-color 0.2s ease;
+        }
+
+        .back-button:hover .back-icon {
+            background-color: #3b2ee8;
+        }       
+
+        .back-button:hover {
+            color: #3b2ee8;
+            border-color: #3b2ee8;
+        }
+
+
+        /* ---------------------------------
+           PROJECT LIST
+        --------------------------------- */
+
+        .project-list {
+            min-width: 0;
+        }
+
+        .project-card {
+            display: block;
+
+            margin-bottom: 31px;
+
+            color: #111;
+            text-decoration: none;
+        }
+
+
+        /* IMAGE */
+
+        .project-image {
+            width: 100%;
+            height: 290px;
+
+            overflow: hidden;
+
+            /* TEMPORARY until we add images */
+            background: #bdbdbd;
+        }
+
+        .project-image img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transform: scale(1);
+
+            transition: transform 0.5s ease;
+        }
+
+
+        /* PROJECT TEXT */
+
+        .project-title {
+            display: inline-block;
+            position: relative;
+
+            margin: 7px 0 0;
+
+            font-size: 20px;
+            line-height: 1.2;
+            font-weight: 500;
+
+            transition: color 0.25s ease;
+        }
+
+        .project-description {
+            margin: 1px 0 0;
+
+            font-size: 12px;
+            line-height: 1.35;
+
+            color: #333;
+        }
+
+
+        /* ---------------------------------
+           HOVER
+        --------------------------------- */
+
+        .project-card:hover .project-image img {
+            transform: scale(1.025);
+        }
+
+        .project-card:hover .project-title {
+            color: #3b2ee8;
+        }
+
+        .project-title::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+
+            width: 0;
+            height: 1px;
+
+            background: #3b2ee8;
+
+            transition: width 0.3s ease;
+        }
+
+        .project-card:hover .project-title::after {
+            width: 100%;
+        }
+
+
+        /* ---------------------------------
+           MOBILE
+        --------------------------------- */
+
+        @media (max-width: 800px) {
+
+            .projects-page {
+                display: block;
+                padding: 100px 25px 60px;
+            }
+
+            .sidebar {
+                position: relative;
+                top: auto;
+
+                margin-bottom: 40px;
+            }
+
+            .project-image {
+                height: 52vw;
+                min-height: 220px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- TOP LEFT NAV -->
+
+    <nav class="top-nav">
+
+        <a href="index.html">
+            TABATA PAREDES
+        </a>
+
+        <span class="nav-line"></span>
+
+        <a href="projects.html" class="projects-link">
+            PROJECTS
+        </a>
+
+    </nav>
+
+
+
+    <main class="projects-page">
+
+
+        <!-- LEFT -->
+
+        <aside class="sidebar">
+
+            <h1>Projects</h1>
+
+            <a href="#" class="filter active">
+                urban planning
+            </a>
+
+            <a href="#" class="filter">
+                urban data science
+            </a>
+
+            <a href="#" class="filter">
+                urban design
+            </a>
+
+            <a href="index.html" class="back-button" aria-label="Back">
+                <span class="back-icon"></span>
+            </a>
+
+        </aside>
+
+
+
+        <!-- RIGHT -->
+
+        <section class="project-list">
+
+
+            <!-- 1 — PMU -->
+
+            <a href="projects/PMU.html" class="project-card">
+
+                <div class="project-image">
+                    <img src="projects/imgs/PMU_0.jpg" alt="Lima–Callao Urban Mobility Plan"
+                    style="object-position: center 32%;">
+                </div>
+
+                <h2 class="project-title">
+                    Lima–Callao Urban Mobility Plan
+                </h2>
+
+                <p class="project-description">
+                    Planning a more integrated and sustainable metropolitan transport network.
+                </p>
+
+            </a>
+
+
+            <!-- 2 — CHANCAY -->
+
+            <a href="projects/Chancay.html" class="project-card">
+
+                <div class="project-image">
+                    <img src="projects/imgs/Chancay_0.jpg" alt="Chancay Urban Development Plan"
+                    style="object-position: center 60%;">
+                </div>
+
+                <h2 class="project-title">
+                    Chancay Urban Development Plan
+                </h2>
+
+                <p class="project-description">
+                    Planning Chancay's urban growth towards 2034.
+                </p>
+
+            </a>
+
+
+            <!-- 3 — LIMA NORTE -->
+
+            <a href="projects/LimaNorte.html" class="project-card">
+
+                <div class="project-image">
+                    <img src="projects/imgs/LimaNorte_0.jpg" alt="Northern Lima Urban Development Plan"
+                    style="object-position: center 100%;">
+                </div>
+
+                <h2 class="project-title">
+                    Northern Lima Urban Development Plan
+                </h2>
+
+                <p class="project-description">
+                    Shaping future urban development across Northern Lima.
+                </p>
+
+            </a>
+
+
+            <!-- 4 — CALLAO -->
+
+            <a href="projects/Callao.html" class="project-card">
+
+                <div class="project-image">
+                    <img src="projects/imgs/Callao_0.jpg" alt="Callao Metropolitan Development Plan"
+                    style="object-position: center 100%;">
+                </div>
+
+                <h2 class="project-title">
+                    Callao Metropolitan Development Plan
+                </h2>
+
+                <p class="project-description">
+                    A long-term spatial strategy for Metropolitan Callao.
+                </p>
+
+            </a>
+
+
+            <!-- 5 — TOD GUIDE -->
+
+            <a href="projects/TOD.html" class="project-card">
+
+                <div class="project-image">
+                    <img src="projects/imgs/TOD_0.jpg" alt="Lima–Callao Transit-Oriented Development Guide"
+                    style="object-position: center 70%;">
+                </div>
+
+                <h2 class="project-title">
+                    Lima–Callao Transit-Oriented Development Guide
+                </h2>
+
+                <p class="project-description">
+                    Guidelines for transit-oriented development around mass-transit stations.
+                </p>
+
+            </a>
+
+
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>
