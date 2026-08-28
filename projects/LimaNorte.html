@@ -142,8 +142,8 @@
             align-items: center;
             justify-content: center;
 
-            width: 22px;
-            height: 22px;
+            width: 29px;
+            height: 29px;
             margin-top: 22px;
 
             border: 2px solid #bbb;
@@ -154,22 +154,24 @@
             transition: border-color 0.2s ease;
         }
 
-        .back-button img {
-            width: 12px;
-            height: 12px;
-            display: block;
+        .back-icon {
+            width: 15px;
+            height: 15px;
+
+            background-color: #aaa;
+
+            -webkit-mask: url("../icons/__arrow.svg") center / contain no-repeat;
+            mask: url("../icons/__arrow.svg") center / contain no-repeat;
+
+            transition: background-color 0.2s ease;
         }
 
-        .back-button .arrow-blue {
-            display: none;
+        .back-button:hover {
+            border-color: #3b2ee8;
         }
 
-        .back-button:hover .arrow-normal {
-            display: none;
-        }
-
-        .back-button:hover .arrow-blue {
-            display: block;
+        .back-button:hover .back-icon {
+            background-color: #3b2ee8;
         }
 
         /* ---------------------------------
@@ -302,15 +304,7 @@
 
 
             <a href="../projects.html" class="back-button" aria-label="Back to projects">
-
-                <img src="../icons/__arrow.svg"
-                    class="arrow-normal"
-                    alt="Back">
-
-                <img src="../icons/__arrow_azul.svg"
-                    class="arrow-blue"
-                    alt="">
-
+                <span class="back-icon"></span>
             </a>
 
         </aside>
