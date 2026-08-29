@@ -76,23 +76,37 @@
             transition: 0.2s ease;
         }
 
-        .social-button img {
+        .social-icon {
+            display: block;
             width: 17px;
             height: 17px;
-            display: block;
+
+            background-color: #111;
+
+            -webkit-mask-size: contain;
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+
+            mask-size: contain;
+            mask-position: center;
+            mask-repeat: no-repeat;
+
+            transition: background-color 0.2s ease;
         }
 
-        .social-button .icon-blue {
-            display: none;
+        .linkedin-icon {
+            -webkit-mask-image: url("icons/i_linkedin.svg");
+            mask-image: url("icons/i_linkedin.svg");
         }
 
-        .social-button:hover .icon-black {
-            display: none;
+        .github-icon {
+            -webkit-mask-image: url("icons/i_github.svg");
+            mask-image: url("icons/i_github.svg");
         }
 
-        .social-button:hover .icon-blue {
-            display: block;
-        }     
+        .social-button:hover .social-icon {
+            background-color: #3b2ee8;
+        }
 
         .social-button:hover {
             color: #3b2ee8;
@@ -173,27 +187,17 @@
                 <a class="social-button"
                 href="https://www.linkedin.com/in/tbtaaa/"
                 target="_blank"
-                rel="noopener noreferrer">
-                    <img src="icons/__linkedin.svg"
-                        class="icon-black"
-                        alt="LinkedIn">
-
-                    <img src="icons/__linkedin_azul.svg"
-                        class="icon-blue"
-                        alt="">
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                    <span class="social-icon linkedin-icon"></span>
                 </a>
 
                 <a class="social-button"
                 href="https://github.com/Tbtaaa"
                 target="_blank"
-                rel="noopener noreferrer">
-                    <img src="icons/__github.svg"
-                        class="icon-black"
-                        alt="GitHub">
-
-                    <img src="icons/__github_azul.svg"
-                        class="icon-blue"
-                        alt="">
+                rel="noopener noreferrer"
+                aria-label="GitHub">
+                    <span class="social-icon github-icon"></span>
                 </a>
 
                 <span class="divider"></span>
