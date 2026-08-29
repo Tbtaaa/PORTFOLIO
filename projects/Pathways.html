@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pathways to Progress — Tabata Paredes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            color: #111;
+            background: white;
+        }
+
+
+        /* ---------------------------------
+           TOP NAV
+        --------------------------------- */
+
+        .top-nav {
+            position: fixed;
+            top: 17px;
+            left: 14px;
+            z-index: 100;
+
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            font-size: 13px;
+        }
+
+        .top-nav a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .top-nav a:hover {
+            color: #3b2ee8;
+        }
+
+        .top-nav .projects-link {
+            font-weight: 700;
+        }
+
+        .nav-line {
+            width: 1px;
+            height: 28px;
+            background: #aaa;
+        }
+
+
+        /* ---------------------------------
+           PAGE LAYOUT
+        --------------------------------- */
+
+        .project-page {
+            display: grid;
+            grid-template-columns: 430px minmax(0, 1fr);
+
+            max-width: 1400px;
+            margin: 0 auto;
+
+            padding: 95px 42px 100px 76px;
+        }
+
+
+        /* ---------------------------------
+           LEFT SIDE — STAYS FIXED
+        --------------------------------- */
+
+        .project-info {
+            position: sticky;
+            top: 135px;
+            align-self: start;
+
+            padding-right: 45px;
+        }
+
+        .project-info h1 {
+            margin: 0 0 15px;
+
+            color: #3b2ee8;
+
+            font-size: 34px;
+            line-height: 1.12;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            padding: 3px 8px;
+
+            border: 1.5px solid #bbb;
+            border-radius: 5px;
+
+            color: #888;
+
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+        }
+
+        .description {
+            max-width: 390px;
+
+            margin: 0;
+
+            font-size: 12.5px;
+            line-height: 1.5;
+
+            color: #333;
+        }
+
+        .description strong {
+            color: #3b2ee8;
+            font-weight: 700;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 29px;
+            height: 29px;
+            margin-top: 22px;
+
+            border: 2px solid #bbb;
+            border-radius: 5px;
+
+            text-decoration: none;
+
+            transition: border-color 0.2s ease;
+        }
+
+        .back-icon {
+            width: 15px;
+            height: 15px;
+
+            background-color: #aaa;
+
+            -webkit-mask: url("../icons/i_arrow.svg") center / contain no-repeat;
+            mask: url("../icons/i_arrow.svg") center / contain no-repeat;
+
+            transition: background-color 0.2s ease;
+        }
+
+        .back-button:hover {
+            border-color: #3b2ee8;
+        }
+
+        .back-button:hover .back-icon {
+            background-color: #3b2ee8;
+        }
+
+        /* ---------------------------------
+           RIGHT SIDE — SCROLLING IMAGES
+        --------------------------------- */
+
+        .gallery {
+            min-width: 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            margin-bottom: 22px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+
+        /* TEMPORARY MAGENTA PLACEHOLDERS */
+
+        .placeholder {
+            height: 300px;
+            background: #ed008c;
+        }
+
+
+        /* ---------------------------------
+           MOBILE
+        --------------------------------- */
+
+        @media (max-width: 850px) {
+
+            .project-page {
+                display: block;
+                padding: 100px 25px 60px;
+            }
+
+            .project-info {
+                position: relative;
+                top: auto;
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+
+            .description {
+                max-width: 600px;
+            }
+
+            .placeholder {
+                height: 55vw;
+                min-height: 220px;
+            }
+        }
+
+        /* ---------------------------------
+           DETAILS
+        --------------------------------- */
+
+        .project-details {
+            margin-top: 24px;
+        }
+
+        .detail-group {
+            margin-bottom: 16px;
+        }
+
+        .detail-group h3 {
+            margin: 0 0 3px;
+
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            color: #424242;
+        }
+
+        .detail-group p {
+            margin: 0;
+
+            font-size: 12px;
+            line-height: 1.5;
+
+            color: #333;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 5px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            color: #111;
+            text-decoration: none;
+
+            transition: color 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: #3b2ee8;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <nav class="top-nav">
+
+        <a href="../index.html">
+            TABATA PAREDES
+        </a>
+
+        <span class="nav-line"></span>
+
+        <a href="../projects.html" class="projects-link">
+            PROJECTS
+        </a>
+
+    </nav>
+
+
+    <main class="project-page">
+
+
+        <!-- LEFT -->
+
+        <aside class="project-info">
+
+            <h1> 
+                Pathways to Progress
+            </h1>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    Urban Data Science
+                </span>
+
+                <span class="tag">
+                    Transport
+                </span>
+
+                <span class="tag">
+                    Equity
+                </span>
+
+            </div>
+
+
+            <p class="description">
+                Pathways to Progress explores how transport connectivity shapes access to
+                high-performing secondary schools across London. The project compares access
+                to all schools with access to Ofsted Outstanding and top-performing Progress 8
+                schools, revealing <strong>how travel times and school choice vary across the city</strong>.
+                It also examines where poor connectivity intersects with child deprivation,
+                highlighting neighbourhoods where transport and socioeconomic disadvantage
+                reinforce one another.
+            </p>
+
+            <div class="project-details">
+
+                <div class="detail-group">
+                    <h3>Methodology</h3>
+                    <p>
+                        GTFS-based public transport accessibility · Nearest-school travel time
+                        analysis · School performance filtering · LSOA-level spatial analysis ·
+                        Bivariate LISA · Socioeconomic vulnerability analysis
+                    </p>
+                </div>
+
+                <div class="detail-group">
+                    <h3>Tools</h3>
+                    <p>
+                        Python · r5py · GeoPandas · pandas · PySAL · Tippecanoe ·
+                        Mapbox GL JS · Chart.js
+                    </p>
+                </div>
+
+                <a href="https://benjamintee.github.io/CASA_UDV_Final/pathways_to_progress.html"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer">
+                    View project website ↗
+                </a>
+
+            </div> 
+
+
+            <a href="../projects.html?filter=data-science" class="back-button" aria-label="Back to data science projects">
+                <span class="back-icon"></span>
+            </a>
+
+        </aside>
+
+
+
+        <!-- RIGHT -->
+
+        <section class="gallery">
+
+
+            <div class="gallery-item placeholder">
+            </div>
+
+
+            <div class="gallery-item placeholder">
+            </div>
+
+
+            <div class="gallery-item placeholder">
+            </div>
+
+
+            <div class="gallery-item placeholder">
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>
