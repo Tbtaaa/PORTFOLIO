@@ -43,6 +43,12 @@
     /* Top navigation scrolls away */
     .top-nav {
         position: absolute;
+        font-size: 11px;
+        gap: 7px;
+    }
+
+    .nav-line {
+        height: 16px;
     }
 
     /* Page headings scroll away */
@@ -55,5 +61,6 @@
     .project-info {
         position: static !important;
     }
+}
 
 }
