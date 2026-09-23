@@ -207,13 +207,36 @@
 
         @media (max-width: 850px) {
 
+            .publications-page {
+                padding: 100px 25px 60px;
+            }
+
             .page-heading {
                 position: relative;
                 top: auto;
+
+                display: block;
+
+                margin-bottom: 45px;
             }
 
             .page-heading::before {
                 display: none;
+            }
+
+            .page-heading h1 {
+                font-size: 38px;
+            }
+
+            .publication {
+                grid-template-columns: 55px 1fr;
+                gap: 20px;
+            }
+
+            .publication-link {
+                grid-column: 2;
+                justify-self: start;
+                margin-top: 8px;
             }
 
         }
