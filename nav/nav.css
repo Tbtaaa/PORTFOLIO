@@ -35,13 +35,25 @@
 }
 
 /* ---------------------------------
-   MOBILE
+   MOBILE — NOTHING STAYS FIXED
 --------------------------------- */
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
 
+    /* Top navigation scrolls away */
     .top-nav {
         position: absolute;
+    }
+
+    /* Page headings scroll away */
+    .page-heading {
+        position: static !important;
+    }
+
+    /* Project/sidebar headings scroll away */
+    .sidebar,
+    .project-info {
+        position: static !important;
     }
 
 }
