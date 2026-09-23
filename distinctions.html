@@ -48,11 +48,34 @@
         --------------------------------- */
 
         .page-heading {
+            position: sticky;
+            top: 55px;
+            z-index: 50;
+
             display: grid;
             grid-template-columns: 245px 1fr;
             gap: 34px;
 
-            margin-bottom: 55px;
+            margin-bottom: 0;
+            padding: 18px 0 35px;
+
+            background: white;
+            border-bottom: 1px solid #dedede;
+        }
+
+        .page-heading::before {
+            content: "";
+            position: absolute;
+
+            left: 50%;
+            bottom: 100%;
+
+            width: 100vw;
+            height: 55px;
+
+            transform: translateX(-50%);
+
+            background: white;
         }
 
 
@@ -87,6 +110,9 @@
             border-top: 1px solid #dedede;
         }
 
+        .distinction:first-child {
+            border-top: none;
+        }
 
         .distinction:last-child {
             border-bottom: 1px solid #dedede;

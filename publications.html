@@ -44,13 +44,35 @@
 
 
         /* ---------------------------------
-           HEADING
+        HEADING
         --------------------------------- */
 
         .page-heading {
-            margin-bottom: 55px;
+            position: sticky;
+            top: 55px;
+            z-index: 50;
+
+            margin-bottom: 0;
+            padding: 18px 0 35px;
+
+            background: white;
+            border-bottom: 1px solid #dedede;
         }
 
+        .page-heading::before {
+            content: "";
+            position: absolute;
+
+            left: 50%;
+            bottom: 100%;
+
+            width: 100vw;
+            height: 55px;
+
+            transform: translateX(-50%);
+
+            background: white;
+        }
 
         .page-heading h1 {
             margin: 0;
@@ -81,6 +103,10 @@
             padding: 30px 0;
 
             border-top: 1px solid #dedede;
+        }
+
+        .publication:first-child {
+            border-top: none;
         }
 
 

@@ -33,3 +33,15 @@
     height: 18px;
     background: #aaa;
 }
+
+/* ---------------------------------
+   MOBILE
+--------------------------------- */
+
+@media (max-width: 800px) {
+
+    .top-nav {
+        position: absolute;
+    }
+
+}
