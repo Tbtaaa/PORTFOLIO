@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="nav/nav.css">
 
     <style>
 
@@ -23,43 +24,6 @@
             font-family: "Poppins", sans-serif;
             color: #111;
             background: white;
-        }
-
-
-        /* ---------------------------------
-           TOP NAVIGATION
-        --------------------------------- */
-
-        .top-nav {
-            position: fixed;
-            top: 17px;
-            left: 14px;
-            z-index: 100;
-
-            display: flex;
-            align-items: center;
-            gap: 18px;
-
-            font-size: 13px;
-        }
-
-        .top-nav a {
-            color: #999;
-            text-decoration: none;
-        }
-
-        .top-nav a:hover {
-            color: #3b2ee8;
-        }
-
-        .top-nav .projects-link {
-            font-weight: 700;
-        }
-
-        .nav-line {
-            width: 1px;
-            height: 28px;
-            background: #aaa;
         }
 
 
@@ -84,7 +48,7 @@
 
         .sidebar {
             position: sticky;
-            top: 180px;
+            top: 100px;
             align-self: start;
         }
 
@@ -270,7 +234,7 @@
            MOBILE
         --------------------------------- */
 
-        @media (max-width: 800px) {
+        @media (max-width: 850px) {
 
             .projects-page {
                 display: block;
@@ -300,21 +264,7 @@
 
     <!-- TOP LEFT NAV -->
 
-    <nav class="top-nav">
-
-        <a href="index.html">
-            TABATA PAREDES
-        </a>
-
-        <span class="nav-line"></span>
-
-        <a href="projects.html" class="projects-link">
-            PROJECTS
-        </a>
-
-    </nav>
-
-
+    <div id="site-nav"></div>
 
     <main class="projects-page">
 
@@ -647,6 +597,8 @@
             filterProjects(initialFilter);
 
         </script>    
+
+    <script src="nav/nav.js"></script>
 
 </body>
 
