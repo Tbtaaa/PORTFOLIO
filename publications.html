@@ -49,8 +49,12 @@
 
         .page-heading {
             position: sticky;
-            top: 55px;
+            top: 100px;
             z-index: 50;
+
+            display: grid;
+            grid-template-columns: 245px 1fr;
+            gap: 34px;
 
             margin-bottom: 0;
             padding: 18px 0 35px;
@@ -67,11 +71,12 @@
             bottom: 100%;
 
             width: 100vw;
-            height: 55px;
+            height: 100px;
 
             transform: translateX(-50%);
 
             background: white;
+            z-index: -1;
         }
 
         .page-heading h1 {
@@ -108,7 +113,6 @@
         .publication:first-child {
             border-top: none;
         }
-
 
         .publication:last-child {
             border-bottom: 1px solid #dedede;
@@ -203,33 +207,13 @@
 
         @media (max-width: 850px) {
 
-            .publications-page {
-                padding: 100px 25px 60px;
-            }
-
-
             .page-heading {
-                margin-bottom: 45px;
+                position: relative;
+                top: auto;
             }
 
-
-            .page-heading h1 {
-                font-size: 38px;
-            }
-
-
-            .publication {
-                grid-template-columns: 55px 1fr;
-                gap: 20px;
-            }
-
-
-            .publication-link {
-                grid-column: 2;
-
-                justify-self: start;
-
-                margin-top: 8px;
+            .page-heading::before {
+                display: none;
             }
 
         }
