@@ -209,13 +209,40 @@
 
         @media (max-width: 850px) {
 
+            .distinctions-page {
+                padding: 100px 25px 60px;
+            }
+
             .page-heading {
                 position: relative;
                 top: auto;
+
+                display: block;
+
+                margin-bottom: 45px;
             }
 
             .page-heading::before {
                 display: none;
+            }
+
+            .page-heading h1 {
+                margin-bottom: 20px;
+                font-size: 38px;
+            }
+
+            .distinction {
+                grid-template-columns: 55px 1fr;
+                gap: 20px;
+            }
+
+            .distinction-image {
+                grid-column: 2;
+
+                height: auto;
+                aspect-ratio: 16 / 9;
+
+                margin-top: 10px;
             }
 
         }
